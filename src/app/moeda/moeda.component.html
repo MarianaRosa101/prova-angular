@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Conversor de moedas</title>
+
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+U/DpzKkCkFzO+VZM91OMD0pIzYQPaNQf/nqd+" crossorigin="anonymous">
+  
+  <!--css-->
+  <link rel="stylesheet" href="convert.component.css">
+</head>
+
+<body>
+
+  <div class="background">
+    <div class="container">
+
+      <h1 class="text-center mt-5">Conversor de moedas</h1>
+
+      <form class="mt-5">
+        <div class="form-group">
+          <label for="inputValue">Valor:</label>
+
+          <input type="number" class="form-control" id="inputValue" name="inputValue" [(ngModel)]="inputValue">
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="fromUnit">De:</label>
+          <select class="form-control" id="fromUnit" name="fromUnit" [(ngModel)]="fromUnit">
+
+            <option value="USD">Dólar</option>
+            <option value="€">Euro</option>
+            <option value="R$">Real</option>
+
+          </select>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="toUnit">Para:</label>
+
+          <select class="form-control" id="toUnit" name="toUnit" [(ngModel)]="toUnit">
+
+            <option value="USD">Dólar</option>
+            <option value="€">Euro</option>
+            <option value="R$">Real</option>
+
+          </select>
+
+        </div>
+
+        <button type="button" class="btn btn-primary mt-4" (click)="convert()">Converter</button>
+      </form>
+
+      <div class="result mt-5">
+        <h2>Resultado:</h2>
+        <p>{{convertedValue}}</p>
+
+      </div>
+    </div>
+  </div>

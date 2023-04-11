@@ -1,69 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Conversor de moedas</title>
+  <head>
 
-  <!--Bootstrap CSS-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+U/DpzKkCkFzO+VZM91OMD0pIzYQPaNQf/nqd+" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conversor de moedas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   
-  <!--css-->
-  <link rel="stylesheet" href="moeda.component.css">
-</head>
+  </head>
 
-<body>
+  <body>
 
-  <div class="background">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <div class="container">
-
       <h1 class="text-center mt-5">Conversor de moedas</h1>
-
       <form class="mt-5">
+
         <div class="form-group">
+
           <label for="inputValue">Valor:</label>
-
+          
           <input type="number" class="form-control" id="inputValue" name="inputValue" [(ngModel)]="inputValue">
-
         </div>
-
         <div class="form-group">
-
+          <label for="exchangeRate">Valor do câmbio:</label>
+          <input type="number" class="form-control" id="exchangeRate" name="exchangeRate" [(ngModel)]="exchangeRate">
+        </div>
+        <div class="form-group">
           <label for="fromUnit">De:</label>
           <select class="form-control" id="fromUnit" name="fromUnit" [(ngModel)]="fromUnit">
-
             <option value="USD">Dólar</option>
-            <option value="€">Euro</option>
-            <option value="R$">Real</option>
-
+            <option value="EUR">Euro</option>
+            <option value="BRL">Real</option>
           </select>
-
         </div>
-
         <div class="form-group">
-
           <label for="toUnit">Para:</label>
-
           <select class="form-control" id="toUnit" name="toUnit" [(ngModel)]="toUnit">
-
             <option value="USD">Dólar</option>
-            <option value="€">Euro</option>
-            <option value="R$">Real</option>
-
+            <option value="EUR">Euro</option>
+            <option value="BRL">Real</option>
           </select>
-
         </div>
-
         <button type="button" class="btn btn-primary mt-4" (click)="convert()">Converter</button>
       </form>
-
       <div class="result mt-5">
         <h2>Resultado:</h2>
         <p>{{convertedValue}}</p>
-
       </div>
     </div>
-  </div>
+  </body>
+</html>
+ 
+

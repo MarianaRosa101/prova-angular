@@ -8,36 +8,36 @@ import { Component } from '@angular/core';
 export class MoedaComponent {
 
   inputValue: number = 0;
-  fromUnit: string = 'R$';
-  toUnit: string = 'R$';
+  fromUnit: string = 'BRL';
+  toUnit: string = 'BRL';
+  exchangeRate: number = 1;
   convertedValue: number = 0;
 
   convert() {
-    let valueInR$ = 0;
+    let valueInBRL = 0;
 
     switch(this.fromUnit) {
-      case 'R$':
-        valueInR$ = this.inputValue;
+      case 'BRL':
+        valueInBRL = this.inputValue;
         break;
-      case 'US$':
-        valueInR$ = this.inputValue * 5.07;
+      case 'USD':
+        valueInBRL = this.inputValue * this.exchangeRate;
         break;
-      case '€':
-        valueInR$ = this.inputValue * 5.54;
+      case 'EUR':
+        valueInBRL = this.inputValue * this.exchangeRate;
         break;
     }
 
     switch(this.toUnit) {
-      case 'R$':
-        this.convertedValue = valueInR$;
+      case 'BRL':
+        this.convertedValue = valueInBRL;
         break;
-      case 'US$':
-        this.convertedValue = valueInR$ / 5.07;
+      case 'USD':
+        this.convertedValue = valueInBRL / this.exchangeRate;
         break;
-      case '€':
-        this.convertedValue = valueInR$ / 5.54;
+      case 'EUR':
+        this.convertedValue = valueInBRL / this.exchangeRate;
         break;
     }
   }
 }
-
